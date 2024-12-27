@@ -20,6 +20,9 @@ import imgEml from './assets/icEmail.svg'
 import imgHst from './assets/icHeadset.svg'
 import imgMds from './assets/icMedias.svg'
 
+import banner from './assets/banner.jpg'
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,8 +32,8 @@ function App() {
     
         <div id="tudo" className="flex flex-col justify-center bg-slate-50">
             <div>
-                <div id="head" className="shadow-lg px-8 py-2 h-[60px] bg-sky-900 w-full flex justify-between fixed top-0">
-                    <div className="w-[120px]" >
+                <div id="head" className="shadow-lg px-8 py-4 h-[80px] bg-sky-900 w-full flex justify-between fixed top-0">
+                    <div className="w-[120px] " >
                         <img className="h-full" id="logotop" src={sifeLogo} alt="logo" />
                     </div>
                     <div className="hidden md:flex gap-1">
@@ -46,17 +49,8 @@ function App() {
                     </div>
                 </div>
             </div>
-            <div class="banner w-full h-[250px] bg-cover bg-center bg-banner mt-[60px]"
-              style={{
-                backgroundImage: `url('/src/assets/banner.jpg')`,
-              }}
-            >
-            </div>
-            <div class="budget w-full h-[480px] flex flex-col justify-center px-8 text-white bg-teste bg-cover bg-center bg-green-400"
-              style={{
-                backgroundImage: `url('/src/assets/budget.jpg')`,
-              }}
-            >
+            <div className="bg-banner w-full h-[250px] bg-cover bg-center mt-[80px]"></div>
+            <div class="bg-budget w-full h-[480px] flex flex-col justify-center px-8 text-white bg-teste bg-cover bg-center bg-green-400">
                 <div class="my-12">
                     <div class="flex  justify-center w-full h-[150px] overflow-hidden">
                         <img  src={imgPC} alt="logo" />
@@ -136,11 +130,11 @@ function App() {
                         <p>Portifólio</p>
                         <p>Fale Conosco</p>
                     </div>
-                    <div className='flex flex-col justify-center'>
+                    <div className='flex flex-col justify-center gap-4'>
                         <img class="h-[60px]" src={sifeLogoPb} alt="logo" />
                         <p class=" text-justify">A SIFE Mídia é uma empresa de criação de sites profissionais que projeta, desenvolve e gerencia sites de alto impacto que geram leads, vendem produtos e contam histórias.</p>
                     </div>
-                    <div>
+                    <div class="flex flex-col gap-4">
                         <h4 class="font-bold text-[22px]">Acesse nossas redes</h4>
                         <div class="flex justify-center w-full gap-3">
                             <RiFacebookFill size={40}/>

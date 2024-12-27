@@ -5,9 +5,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'budget': "url('/assets/budget.jpg')",
-        'banner': "url('/assets/banner.jpg')",
-        'pc': "url('/assets/pc.png')",
+        'budget': "url('/src/assets/budget.jpg')",
+        'banner': "url('/src/assets/banner.jpg')",
+        'pc': "url('/src/assets/pc.png')",
       },
     },
   },
