@@ -19,6 +19,7 @@ import imgSeo from './assets/icSeo.svg'
 import imgEml from './assets/icEmail.svg'
 import imgHst from './assets/icHeadset.svg'
 import imgMds from './assets/icMedias.svg'
+import { TfiClose } from "react-icons/tfi";
 
 import banner from './assets/banner.jpg'
 
@@ -27,12 +28,31 @@ import banner from './assets/banner.jpg'
 function App() {
   const [count, setCount] = useState(0)
 
+  const btnOpenMenu = () => {
+    const spanMenu = document.getElementById("spanMenu")
+    const openMenu = document.getElementById("openMenu")
+    const closeMenu = document.getElementById("closeMenu")
+    openMenu.style.display ="none";
+    closeMenu.style.display ="flex";
+    spanMenu.style.display ="flex";
+
+  };
+
+  const btnCloseMenu = () => {
+    const spanMenu = document.getElementById("spanMenu")
+    const openMenu = document.getElementById("openMenu")
+    const closeMenu = document.getElementById("closeMenu")
+    openMenu.style.display ="flex";
+    closeMenu.style.display ="none";
+    spanMenu.style.display ="none";
+  };
+
   return (
     
     
         <div id="tudo" className="flex flex-col justify-center bg-slate-50">
             <div>
-                <div id="head" className="shadow-lg px-8 py-4 h-[80px] bg-sky-900 w-full flex justify-between fixed top-0">
+                <div id="head" className="shadow-lg px-8 py-4 h-[80px] bg-sky-900 w-full flex justify-between fixed top-0 z-50">
                     <div className="w-[120px] " >
                         <img className="h-full" id="logotop" src={sifeLogo} alt="logo" />
                     </div>
@@ -45,9 +65,18 @@ function App() {
                         </div>
                     </div>
                     <div className='flex md:hidden'>
-                        <div className="h-full menuMov flex items-center text-white hover:text-gray-300" id=""><CiMenuFries size={33} /></div>
+                        <button id="openMenu" onClick={btnOpenMenu} className="h-full flex items-center text-white hover:text-gray-300"><CiMenuFries size={33} /></button>
+                        <button id="closeMenu" onClick={btnCloseMenu} className="h-full hidden items-center text-white hover:text-gray-300"><TfiClose size={33} /></button>
                     </div>
                 </div>
+                <span id="spanMenu" className='hidden fixed right-0 bg-sky-900 w-[70%] h-[100%] mt-[80px] pr-8 text-right'>
+                    <div id="menu" className="flex flex-col text-white w-full h-[200px] gap-2">
+                        <div className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Home</div>
+                        <div className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Quem Somos</div>
+                        <div className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">Portifólio</div>
+                        <div className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">Fale Conosco</div>
+                    </div>
+                </span>
             </div>
             <div className="bg-banner w-full h-[250px] bg-cover bg-center mt-[80px]"></div>
             <div class="bg-budget w-full h-[480px] flex flex-col justify-center px-8 text-white bg-teste bg-cover bg-center bg-green-400">
@@ -60,7 +89,7 @@ function App() {
                     Nossos sites são desenvolvidos para que você tenha autonomia em gerenciar seu próprio conteúdo.
                     Através de um painel administrativo você terá liberdade para adicionar textos, imagens, vídeos e até mesmo criar páginas adicionais. 
                     </p>
-                    <button class="bg-white hover:bg-purple-100 rounded-full px-8 h-12 text-black text-sm">Peça um orçamento</button>
+                    <button id="btnMenu" class="bg-white hover:bg-purple-100 rounded-full px-8 h-12 text-black text-sm">Peça um orçamento</button>
                 </div>
             </div>
             <div id="service" class="text-black px-8 md:px-12 my-8 md:my-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
@@ -149,10 +178,9 @@ function App() {
                     </div>
                 </div>
             </div>
-        </div>
-          
-    
+        </div>   
   )
 }
+
 
 export default App
