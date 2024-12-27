@@ -27,7 +27,7 @@ function App() {
   return (
     
     
-        <div id="tudo" className="flex flex-col justify-center">
+        <div id="tudo" className="flex flex-col justify-center bg-slate-50">
             <div>
                 <div id="head" className="shadow-lg px-8 py-2 h-[60px] bg-sky-900 w-full flex justify-between fixed top-0">
                     <div className="w-[120px]" >
@@ -69,7 +69,7 @@ function App() {
                     <button class="bg-white hover:bg-purple-100 rounded-full px-8 h-12 text-black text-sm">Peça um orçamento</button>
                 </div>
             </div>
-            <div id="service" class="bg-slate-50 px-8 md:px-12 my-8 md:my-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+            <div id="service" class="text-black px-8 md:px-12 my-8 md:my-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
                 <div class="flex gap-4">
                     <div class="w-[50px] min-w-[30px]">
                         <img class="w-full" src={imgResp} alt="seo" />
@@ -127,7 +127,7 @@ function App() {
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-300">
+            <div class="bg-gray-300 text-black">
                 <div class="m-8 flex flex-col md:flex-row md:justify-between items-center justify-center md:gap-56 gap-3">
                     <div class="hidden md:flex flex-col">
                         <h4>Menus</h4>
