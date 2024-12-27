@@ -1,7 +1,7 @@
 //import { FaSave } from 'react-icons/fa'
 import React from 'react';
 import { HiOutlineMail } from "react-icons/hi";
-import { TfiMenuAlt } from "react-icons/tfi";
+import { CiMenuFries } from "react-icons/ci";
 import { RiFacebookFill } from "react-icons/ri";
 import { ImLinkedin2 } from "react-icons/im"; 
 import { GrInstagram } from "react-icons/gr"; 
@@ -45,7 +45,7 @@ function App() {
                         </div>
                     </div>
                     <div className='flex md:hidden'>
-                        <div className="h-full menuMov flex items-center text-white hover:text-gray-300" id=""><TfiMenuAlt size={33} /></div>
+                        <div className="h-full menuMov flex items-center text-white hover:text-gray-300" id=""><CiMenuFries size={33} /></div>
                     </div>
                 </div>
             </div>
