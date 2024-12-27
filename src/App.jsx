@@ -46,15 +46,13 @@ function App() {
                     </div>
                 </div>
             </div>
-            <div class="w-full h-[250px] bg-cover bg-center bg-banner mt-[60px]"
+            <div class="banner w-full h-[250px] bg-cover bg-center bg-banner mt-[60px]"
               style={{
-                // Define a imagem de fundo inline
                 backgroundImage: `url('/src/assets/banner.jpg')`,
               }}
             >
-              {/*<img src={bgbanner} alt="" />*/}
             </div>
-            <div class="w-full h-[480px] flex flex-col justify-center px-8 text-white bg-teste bg-cover bg-center bg-green-400"
+            <div class="budget w-full h-[480px] flex flex-col justify-center px-8 text-white bg-teste bg-cover bg-center bg-green-400"
               style={{
                 backgroundImage: `url('/src/assets/budget.jpg')`,
               }}
@@ -71,7 +69,7 @@ function App() {
                     <button class="bg-white hover:bg-purple-100 rounded-full px-8 h-12 text-black text-sm">Peça um orçamento</button>
                 </div>
             </div>
-            <div id="service" class="px-8 md:px-12 my-8 md:my-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+            <div id="service" class="bg-slate-50 px-8 md:px-12 my-8 md:my-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
                 <div class="flex gap-4">
                     <div class="w-[50px] min-w-[30px]">
                         <img class="w-full" src={imgResp} alt="seo" />
