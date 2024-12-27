@@ -20,8 +20,8 @@ import imgEml from './assets/icEmail.svg'
 import imgHst from './assets/icHeadset.svg'
 import imgMds from './assets/icMedias.svg'
 import { TfiClose } from "react-icons/tfi";
+import { useEffect } from "react";
 
-import banner from './assets/banner.jpg'
 
 
 
@@ -47,6 +47,28 @@ function App() {
     spanMenu.style.display ="none";
   };
 
+//
+
+useEffect(() => {
+
+    const spanMenu = document.getElementById("spanMenu")
+    const openMenu = document.getElementById("openMenu")
+    const closeMenu = document.getElementById("closeMenu")
+    spanMenu.addEventListener("click", function(event){
+
+        if(event.target === spanMenu) {
+            spanMenu.style.display = "none"
+            openMenu.style.display ="flex";
+            closeMenu.style.display ="none";
+        } 
+    
+    })
+        
+  }, []); 
+
+//
+
+
   return (
     
     
@@ -69,14 +91,16 @@ function App() {
                         <button id="closeMenu" onClick={btnCloseMenu} className="h-full hidden items-center text-white hover:text-gray-300"><TfiClose size={33} /></button>
                     </div>
                 </div>
-                <span id="spanMenu" className='hidden fixed right-0 bg-sky-900 w-[70%] h-[100%] mt-[80px] pr-8 text-right'>
-                    <div id="menu" className="flex flex-col text-white w-full h-[200px] gap-2">
-                        <div className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Home</div>
-                        <div className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Quem Somos</div>
-                        <div className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">Portifólio</div>
-                        <div className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">Fale Conosco</div>
-                    </div>
-                </span>
+                <div id="spanMenu" className='hidden w-full h-screen fixed'>
+                    <span className='bg-sky-900 w-[70%] h-[100%] mt-[80px] pr-8 text-right fixed right-0'>
+                        <div id="menu" className="flex flex-col text-white w-full h-[200px] gap-2">
+                            <div className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Home</div>
+                            <div className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Quem Somos</div>
+                            <div className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">Portifólio</div>
+                            <div className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">Fale Conosco</div>
+                        </div>
+                    </span>
+                </div>
             </div>
             <div className="bg-banner w-full h-[250px] bg-cover bg-center mt-[80px]"></div>
             <div class="bg-budget w-full h-[480px] flex flex-col justify-center px-8 text-white bg-teste bg-cover bg-center bg-green-400">
