@@ -7,7 +7,6 @@ import { ImLinkedin2 } from "react-icons/im";
 import { GrInstagram } from "react-icons/gr"; 
 import { RiWhatsappLine } from "react-icons/ri"; 
 import './styles/style.css';
-//import './styles/output.css';
 import { useState } from 'react'
 
 import sifeLogo from './assets/logo_sife.svg'
@@ -20,13 +19,7 @@ import imgSeo from './assets/icSeo.svg'
 import imgEml from './assets/icEmail.svg'
 import imgHst from './assets/icHeadset.svg'
 import imgMds from './assets/icMedias.svg'
-//import bgbanner from './assets/banner.jpg'
-//import bgbudget from './assets/budget.jpg'
 
-
-
-//import { useState } from 'react'
-//import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
