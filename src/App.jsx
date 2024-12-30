@@ -18,6 +18,10 @@ import imgEml from './assets/icEmail.svg'
 import imgHst from './assets/icHeadset.svg'
 import imgMds from './assets/icMedias.svg'
 
+/*import img1 from './assets/1.jpg'
+import img2 from './assets/1.jpg'
+import img3 from './assets/1.jpg'*/
+
 import { TfiClose } from "react-icons/tfi";
 import { useEffect } from "react";
 
@@ -48,15 +52,18 @@ function App() {
     spamContato.style.display ="none";
   };
 
-  
 const [currentIndex, setCurrentIndex] = useState(0);
 
 const images = [
-    './src/assets/1.jpg',
-    './src/assets/2.jpg',
-    './src/assets/3.jpg',
+    './assets/1.jpg',
+    './assets/2.jpg',
+    './assets/3.jpg'
+]; 
 
-  ];    
+//const imagePath = require('./assets/image.jpg');
+
+/*const imagePath = require(images.length);
+alert("imagePath = "+imagePath)*/
 
 const nextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -73,7 +80,7 @@ useEffect(() => {
     return () => clearInterval(intervalId);
 }, []);
 
-  
+
 
 //
 useEffect(() => {
