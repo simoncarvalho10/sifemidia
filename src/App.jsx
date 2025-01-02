@@ -18,9 +18,9 @@ import imgEml from './assets/icEmail.svg'
 import imgHst from './assets/icHeadset.svg'
 import imgMds from './assets/icMedias.svg'
 
-/*import img1 from './assets/1.jpg'
-import img2 from './assets/1.jpg'
-import img3 from './assets/1.jpg'*/
+import img1 from './assets/1.jpg'
+import img2 from './assets/2.jpg'
+import img3 from './assets/3.jpg'
 
 import { TfiClose } from "react-icons/tfi";
 import { useEffect } from "react";
@@ -54,23 +54,27 @@ function App() {
 
 const [currentIndex, setCurrentIndex] = useState(0);
 
+//const images = [img1, img2, img3]; 
+
 const images = [
-    './assets/1.jpg',
-    './assets/2.jpg',
-    './assets/3.jpg'
+    /*'./src/assets/1.jpg',
+    './src/assets/2.jpg',
+    './src/assets/3.jpg'*/
+    img1,
+    img2,
+    img3
 ]; 
 
-//const imagePath = require('./assets/image.jpg');
 
-/*const imagePath = require(images.length);
-alert("imagePath = "+imagePath)*/
 
 const nextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    //alert("Imagem = "+images.length);
 };
 
 const prevImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    //alert("Imagem = "+images.length);
 };
 
 useEffect(() => {
@@ -201,13 +205,17 @@ useEffect(() => {
             <div id="default-carousel" class="relative w-full mt-[80px]" data-carousel="slide">
                 <div class="h-56 overflow-hidden md:h-96 bg-blue-200">
                     <div class="flex duration-700 ease-in-out" data-carousel-item>
-                        <img 
-                            id="carousel-item-1" 
-                            src={images[currentIndex]}
-                            alt={`Imagem ${currentIndex + 1}`} 
-                            class="absolute block h-full md:w-full object-cover bg-cover bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" 
-                        />
-                    </div>
+                        {images.map((image, index) => (
+                            <img 
+                                key={index}
+                                id={`carousel-item-${index + 1}`} 
+                                src={image}
+                                alt={`Imagem ${index + 1}`} 
+                                //alt={`Image ${index + 1}`}
+                                className={`absolute block h-full md:w-full object-cover bg-cover bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+                            />
+                        ))}
+                        </div>
                 </div>
                 <div class="absolute flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
                     {images.map((_, index) => (
