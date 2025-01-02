@@ -185,33 +185,33 @@ useEffect(() => {
                     </span>
                 </div>
             </div>
-            <div id="spamContato" className="fixed hidden justify-center items-center h-screen w-full bg-black/80 top-0 z-50">
+            <div id="spamContato" className="fixed hidden justify-center items-center h-screen w-full bg-black/80 top-0 z-50 text-black">
                 <span id="contatospam" className="h-[90%] w-[90%] bg-gray-300">
                     <div className="w-full px-6 pt-6">
                         <button onClick={btnCloseContato} id="btnCloseContato" className="  top-0"><TfiClose size={25}/></button>
                     </div>
                     <div className="px-6 pb-6 pt-2 flex flex-col gap-3">
                         <p className="w-full -mb-2">nome</p>
-                        <input type="text" className="w-full h-8" />
+                        <input type="text" className="w-full h-8 bg-white" />
                         <p className="w-full -mb-2">telefone</p>
-                        <input type="text" className="w-full h-8"/>
+                        <input type="text" className="w-full h-8 bg-white"/>
                         <p className="w-full -mb-2">Tipo de site</p>
-                        <select name="" id="" className="w-full h-8">
+                        <select name="" id="" className="w-full h-8 bg-white">
                             <option value="">Novo Site</option>
                             <option value="">Atulização de site</option>
                         </select>
                         <div className="flex gap-3">
-                            <div className="w-[40%]">
+                            <div className="grow">
                                 <p className="w-full">Dominio</p>
-                                <select name="" id="" className="w-full h-8">
+                                <select name="" id="" className="w-full h-8 bg-white">
                                     <option value="0">Já possuo um domínio</option>
                                     <option value="1">Sim</option>
                                     <option value="2">Não</option>
                                 </select>
                             </div>
-                            <div className="grow">
+                            <div className="w-[35%]">
                                 <p className="w-full">Qtde. de páginas</p>
-                                <select name="" id="" className="w-full h-8">
+                                <select name="" id="" className="w-full h-8 bg-white">
                                     <option value="">1</option>
                                     <option value="">2</option>
                                     <option value="">3</option>
@@ -226,7 +226,7 @@ useEffect(() => {
                             </div>
                         </div>
                         <p className="w-full -mb-2">Observações</p>
-                        <input type="text" className="w-full h-[95px]"/>
+                        <input type="text" className="w-full h-[95px] bg-white"/>
                         <button className="h-8 bg-sky-700 mt-2 text-white">Enviar</button>
                     </div>
                 </span>
