@@ -247,14 +247,7 @@ useEffect(() => {
                                 src={image}
                                 alt={`Imagem ${index + 1}`} 
                                 //alt={`Image ${index + 1}`}
-                                className={`absolute block h-full md:w-full object-cover bg-cover bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${
-                                    index === currentIndex 
-                                    /*? 'opacity-100' : 'opacity-0'*/
-                                    ? 'translate-x-50'
-                                    : index < currentIndex
-                                    ? '-translate-x-full'
-                                    : 'translate-x-full'
-                                }`}
+                                className={`absolute block h-full md:w-full object-cover bg-cover bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
                              />
                         ))}
                         </div>
