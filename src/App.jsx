@@ -21,6 +21,9 @@ import imgMds from './assets/icMedias.svg'
 import img1 from './assets/1.jpg'
 import img2 from './assets/2.jpg'
 import img3 from './assets/3.jpg'
+import img1a from './assets/1a.jpg'
+import img2b from './assets/2b.jpg'
+import img3c from './assets/3c.jpg'
 
 import { TfiClose } from "react-icons/tfi";
 import { useEffect } from "react";
@@ -65,6 +68,14 @@ const images = [
     img1,
     img2,
     img3
+]; 
+const images2 = [
+    /*'./src/assets/1.jpg',
+    './src/assets/2.jpg',
+    './src/assets/3.jpg'*/
+    img1a,
+    img2b,
+    img3c
 ]; 
 
 
@@ -115,6 +126,45 @@ useEffect(() => {
 }, []);
 
 
+const alertnameContato = document.getElementById("alertnameContato")
+const alertfoneContato = document.getElementById("alertfoneContato")
+
+const btnFormContato = () => {
+
+    if (nameContato.value == "") {
+        alertnameContato.style.display = "flex";
+        nameContato.classList.add("border-red-500");
+    }
+
+    if (foneContato.value == "") {
+        alertfoneContato.style.display = "flex";
+        foneContato.classList.add("border-red-500");
+    }
+}
+
+useEffect (() => {
+
+    const nameContato = document.getElementById("nameContato")
+    const foneContato = document.getElementById("foneContato")    
+
+    nameContato.addEventListener("input", function(event){
+        let inputnameContato = event.target.value;
+        if (inputnameContato !== ""){
+            alertnameContato.style.display = "none";
+            nameContato.classList.remove("border-red-500");
+        }
+    });
+
+    foneContato.addEventListener("input", function(event){
+        let inputnameContato = event.target.value;
+        if (inputnameContato !== ""){
+            alertfoneContato.style.display = "none";
+            foneContato.classList.remove("border-red-500");
+        }
+    });
+    
+
+})
 
 //
 useEffect(() => {
@@ -134,7 +184,7 @@ useEffect(() => {
     const spamContato = document.getElementById("spamContato")
     const btnOrcamento = document.getElementById("btnOrcamento")
     
-    btnOrcamento.addEventListener("click", function(event){
+    btnOrcamento.addEventListener("click", function(){
         spamContato.style.display = "flex";
     })    
     
@@ -191,26 +241,28 @@ useEffect(() => {
                         <button onClick={btnCloseContato} id="btnCloseContato" className="  top-0"><TfiClose size={25}/></button>
                     </div>
                     <div className="px-6 pb-6 pt-2 flex flex-col gap-3">
-                        <p className="w-full -mb-2">nome</p>
-                        <input type="text" className="w-full h-8 bg-white" />
-                        <p className="w-full -mb-2">telefone</p>
-                        <input type="text" className="w-full h-8 bg-white"/>
-                        <p className="w-full -mb-2">Tipo de site</p>
+                        <p className="w-full -mb-2">*Nome:</p>
+                        <input id="nameContato" type="text" className="w-full h-8 bg-white border" />
+                        <span id="alertnameContato" className='hidden text-red-500 -mt-2'>Por favor, digite o seu nome!</span>
+                        <p className="w-full -mb-2">*Telefone:</p>
+                        <input id="foneContato" type="text" className="w-full h-8 border bg-white"/>
+                        <span id="alertfoneContato" className='hidden text-red-500 -mt-2'>Por favor, digite o seu telefone!</span>
+                        <p className="w-full -mb-2">Tipo de site:</p>
                         <select name="" id="" className="w-full h-8 bg-white">
                             <option value="">Novo Site</option>
                             <option value="">Atulização de site</option>
                         </select>
                         <div className="flex gap-3">
                             <div className="grow">
-                                <p className="w-full">Dominio</p>
+                                <p className="w-full">Dominio:</p>
                                 <select name="" id="" className="w-full h-8 bg-white">
                                     <option value="0">Já possuo um domínio</option>
                                     <option value="1">Sim</option>
                                     <option value="2">Não</option>
                                 </select>
                             </div>
-                            <div className="w-[35%]">
-                                <p className="w-full">Qtde. de páginas</p>
+                            <div className="w-[40%]">
+                                <p className="w-full">Qtde. de páginas:</p>
                                 <select name="" id="" className="w-full h-8 bg-white">
                                     <option value="">1</option>
                                     <option value="">2</option>
@@ -225,14 +277,49 @@ useEffect(() => {
                                 </select>
                             </div>
                         </div>
-                        <p className="w-full -mb-2">Observações</p>
+                        <p className="w-full -mb-2">Observações:</p>
                         <input type="text" className="w-full h-[95px] bg-white"/>
-                        <button className="h-8 bg-sky-700 mt-2 text-white">Enviar</button>
+                        <button onClick={btnFormContato} id="enviarContato" className="h-8 bg-sky-700 mt-2 text-white">Enviar</button>
                     </div>
                 </span>
             </div>
 
-            <div id="default-carousel" class="relative w-full mt-[80px]" data-carousel="slide">
+            <div id="default-carousel" class="md:hidden relative w-full mt-[80px]" data-carousel="slide">
+                <div class="h-[500px] md:h-96 bg-blue-200">
+                    <div 
+                        class="flex duration-700 ease-in-out" data-carousel-item
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
+                    >
+                        {images2.map((image, index) => (
+                            <img 
+                                key={index}
+                                id={`carousel-item-${index + 1}`} 
+                                src={image}
+                                alt={`Imagem ${index + 1}`} 
+                                //alt={`Image ${index + 1}`}
+                                className={`absolute block w-full h-full object-cover bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+                             />
+                        ))}
+                        </div>
+                </div>
+                <div class="absolute flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                    {images.map((_, index) => (
+                        <button 
+                            key={index}
+                            onClick={() => setCurrentIndex(index)}
+                            type="button" 
+                            class={`w-3 h-3 rounded-full bg-white ${currentIndex === index ? 'bg-white' : 'bg-gray-500'}`}
+                            aria-current="true" 
+                            aria-label="Slide 1" 
+                            data-carousel-slide-to="0">
+                        </button>
+                    ))}
+                </div>
+            </div>            
+
+            <div id="default-carousel" class="hidden md:flex relative w-full mt-[80px]" data-carousel="slide">
                 <div class="h-56 overflow-hidden md:h-96 bg-blue-200">
                     <div 
                         class="flex duration-700 ease-in-out" data-carousel-item
