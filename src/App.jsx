@@ -53,6 +53,8 @@ function App() {
   };
 
 const [currentIndex, setCurrentIndex] = useState(0);
+const [touchStart, setTouchStart] = useState(null);
+const [touchEnd, setTouchEnd] = useState(null);
 
 //const images = [img1, img2, img3]; 
 
@@ -76,6 +78,34 @@ const prevImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     //alert("Imagem = "+images.length);
 };
+
+const handleTouchStart = (e) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const swipeDistance = touchStart - touchEnd;
+
+    // Swipe para a direita
+    if (swipeDistance > 50) {
+      nextImage();
+    }
+
+    // Swipe para a esquerda
+    if (swipeDistance < -50) {
+      prevImage();
+    }
+
+    // Resetar os valores de toque
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
 
 useEffect(() => {
     const intervalId = setInterval(nextImage, 3000); // Troca a imagem a cada 3 segundos
@@ -204,7 +234,12 @@ useEffect(() => {
 
             <div id="default-carousel" class="relative w-full mt-[80px]" data-carousel="slide">
                 <div class="h-56 overflow-hidden md:h-96 bg-blue-200">
-                    <div class="flex duration-700 ease-in-out" data-carousel-item>
+                    <div 
+                        class="flex duration-700 ease-in-out" data-carousel-item
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
+                    >
                         {images.map((image, index) => (
                             <img 
                                 key={index}
@@ -212,7 +247,12 @@ useEffect(() => {
                                 src={image}
                                 alt={`Imagem ${index + 1}`} 
                                 //alt={`Image ${index + 1}`}
-                                className={`absolute block h-full md:w-full object-cover bg-cover bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+                                className={`absolute block h-full md:w-full object-cover bg-cover bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${
+                                    index === currentIndex 
+                                    ? 'opacity-100'
+                                    : index < currentIndex 
+                                    ? 'opacity-0'
+                                    : index < currentIndex }`}
                             />
                         ))}
                         </div>
