@@ -304,7 +304,7 @@ useEffect(() => {
                         ))}
                         </div>
                 </div>
-                <div class="absolute flex -translate-x-1/2 bottom-11 left-1/2 space-x-3 rtl:space-x-reverse">
+                <div class="absolute flex -translate-x-1/2 bottom-[60px] left-1/2 space-x-3 rtl:space-x-reverse">
                     {images.map((_, index) => (
                         <button 
                             key={index}
