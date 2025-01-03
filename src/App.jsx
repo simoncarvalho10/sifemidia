@@ -285,7 +285,7 @@ useEffect(() => {
             </div>
 
             <div id="default-carousel" class="md:hidden relative w-full mt-[80px]" data-carousel="slide">
-                <div class="h-[600px] md:h-96 bg-blue-200">
+                <div class="h-screen md:h-96 bg-blue-200">
                     <div 
                         class="flex duration-700 ease-in-out" data-carousel-item
                         onTouchStart={handleTouchStart}
