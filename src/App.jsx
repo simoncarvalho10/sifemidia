@@ -284,7 +284,7 @@ useEffect(() => {
                 </span>
             </div>
 
-            <div id="default-carousel" class="md:hidden relative w-full" data-carousel="slide">
+            <div id="default-carousel" class="md:hidden relative w-full -mt-[10px]" data-carousel="slide">
                 <div class="h-screen md:h-96 bg-blue-200">
                     <div 
                         class="flex duration-700 ease-in-out" data-carousel-item
