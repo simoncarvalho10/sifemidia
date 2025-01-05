@@ -207,7 +207,7 @@ useEffect(() => {
     
         <div id="tudo" className="flex flex-col justify-center bg-slate-50">
             <div>
-               <div id="head" className="shadow-lg px-8 py-4 h-[80px] bg-sky-900 w-full flex justify-between fixed z-10 top-0">
+               <div id="head" className="shadow-lg px-8 md:px-12 py-4 h-[80px] bg-sky-900 w-full flex justify-between fixed z-10 top-0">
                     <div className="w-[120px] " >
                         <img className="h-full" id="logotop" src={sifeLogo} alt="logo" />
                     </div>
@@ -345,23 +345,23 @@ useEffect(() => {
                             key={index}
                             onClick={() => setCurrentIndex(index)}
                             type="button" 
-                            class={`w-3 h-3 rounded-full bg-white ${currentIndex === index ? 'bg-white' : 'bg-gray-500'}`}
+                            class={`w-3 h-3 rounded-full bg-gray-200 ${currentIndex === index ? 'bg-gray-400' : 'bg-gray-600'}`}
                             aria-current="true" 
                             aria-label="Slide 1" 
                             data-carousel-slide-to="0">
                         </button>
                     ))}
                 </div>
-                <button onClick={prevImage} type="button" class="hidden md:block absolute top-0 start-0 items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <button onClick={prevImage} type="button" class="hidden md:block absolute top-0 start-0 items-center justify-center h-full px-4 cursor-pointer group" >
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 dark:bg-gray-800/80 group-hover:bg-black/50 dark:group-hover:bg-gray-800/90 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                         <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                         </svg>
                         <span class="sr-only">Previous</span>
                     </span>
                 </button>
-                <button onClick={nextImage} type="button" class="hidden md:block absolute top-0 end-0 items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <button onClick={nextImage} type="button" class="hidden md:block absolute top-0 end-0 items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 dark:bg-gray-800/30 group-hover:bg-black/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                         <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                         </svg>
@@ -369,17 +369,19 @@ useEffect(() => {
                     </span>
                 </button>
             </div>
-            <div class="bg-budget w-full h-[480px] flex flex-col justify-center px-8 text-white bg-teste bg-cover bg-center bg-green-400">
-                <div class="my-12">
-                    <div class="flex  justify-center w-full h-[150px] overflow-hidden">
+            <div class="bg-budget md:shadow-lg  w-full h-[480px] flex flex-col justify-center px-8 md:px-12 text-white bg-teste bg-cover bg-center bg-green-400">
+                <div class="my-12 md:flex">
+                    <div class="flex justify-center w-full h-[150px] md:h-[250px] overflow-hidden">
                         <img  src={imgPC} alt="logo" />
                     </div>
-                    <h2 class="font-bold text-[20px] -mb-6 w-full">AGÊNCIA DE CRIAÇÃO DE SITES</h2>
-                    <p class="text-justify py-10">
-                    Nossos sites são desenvolvidos para que você tenha autonomia em gerenciar seu próprio conteúdo.
-                    Através de um painel administrativo você terá liberdade para adicionar textos, imagens, vídeos e até mesmo criar páginas adicionais. 
-                    </p>
-                    <button  id="btnOrcamento" class="bg-white hover:bg-purple-100 rounded-full px-8 h-12 text-black text-sm">Peça um orçamento</button>
+                    <div className='md:flex md:flex-col md:justify-center md:place-items-start'>
+                        <h2 class="font-bold text-[20px] -mb-6 w-full">AGÊNCIA DE CRIAÇÃO DE SITES</h2>
+                        <p class="text-justify py-10">
+                        Nossos sites são desenvolvidos para que você tenha autonomia em gerenciar seu próprio conteúdo.
+                        Através de um painel administrativo você terá liberdade para adicionar textos, imagens, vídeos e até mesmo criar páginas adicionais. 
+                        </p>
+                        <button  id="btnOrcamento" class="bg-white hover:bg-purple-100 rounded-full px-8 h-12 text-black text-sm">Peça um orçamento</button>
+                    </div>
                 </div>
             </div>
             <div id="service" class="text-black px-8 md:px-12 my-8 md:my-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
@@ -441,20 +443,20 @@ useEffect(() => {
                 </div>
             </div>
             <div class="bg-gray-300 text-black">
-                <div class="m-8 flex flex-col md:flex-row md:justify-between items-center justify-center md:gap-56 gap-3">
-                    <div class="hidden md:flex flex-col">
-                        <h4>Menus</h4>
-                        <p>Home</p>
-                        <p>Quem Somos</p>
-                        <p>Portifólio</p>
-                        <p>Fale Conosco</p>
+                <div class="m-8 md:mx-12 flex flex-col md:flex-row md:justify-between items-center justify-center md:gap-24 gap-3">
+                    <div class="hidden md:flex flex-col md:w-[20%]">
+                        <h4 class="md:w-full font-bold text-[22px] md:h-9">Menus:</h4>
+                        <p className='md:w-full md:h-7 md:hover:bg-gray-200'>Home</p>
+                        <p className='md:w-full md:h-7 md:hover:bg-gray-200'>Quem Somos</p>
+                        <p className='md:w-full md:h-7 md:hover:bg-gray-200'>Portifólio</p>
+                        <p className='md:w-full md:h-7 md:hover:bg-gray-200'>Fale Conosco</p>
                     </div>
                     <div className='flex flex-col justify-center gap-4'>
                         <img class="h-[60px]" src={sifeLogoPb} alt="logo" />
                         <p class=" text-justify">A SIFE Mídia é uma empresa de criação de sites profissionais que projeta, desenvolve e gerencia sites de alto impacto que geram leads, vendem produtos e contam histórias.</p>
                     </div>
-                    <div class="flex flex-col gap-4">
-                        <h4 class="font-bold text-[22px]">Acesse nossas redes</h4>
+                    <div class="flex flex-col gap-4 md:w-[30%]">
+                        <h4 class="font-bold text-[22px]">Acesse nossas redes:</h4>
                         <div class="flex justify-center w-full gap-3">
                             <RiFacebookFill size={40}/>
                             <ImLinkedin2 size={40}/>
