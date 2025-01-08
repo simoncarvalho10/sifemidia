@@ -175,8 +175,8 @@ function home() {
                     </span>
                 </button>
             </div>
-            <div class="bg-budget md:shadow-lg  w-full h-[480px] flex flex-col justify-center px-8 md:px-12 text-white bg-teste bg-cover bg-center bg-green-400">
-                <div class="my-12 md:flex">
+            <div class="bg-budget md:shadow-lg  w-full h-full flex flex-col justify-center px-8 md:px-12 text-white bg-teste bg-cover bg-center bg-green-400">
+                <div class="py-16 md:flex">
                     <div class="flex justify-center w-full h-[150px] md:h-[250px] overflow-hidden">
                         <img  src={imgPC} alt="logo" />
                     </div>
@@ -190,7 +190,7 @@ function home() {
                     </div>
                 </div>
             </div>
-            <div id="service" class="text-black px-8 md:px-12 my-8 md:my-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+            <div id="service" class="text-black px-8 md:px-12 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
                 <div class="flex gap-4">
                     <div class="w-[50px] min-w-[30px]">
                         <img class="w-full" src={imgResp} alt="seo" />

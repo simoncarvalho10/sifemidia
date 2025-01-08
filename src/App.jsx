@@ -9,7 +9,7 @@ import Footer from './pages/footer'
 
 function App() {
     return( 
-        <div id="tudo" className="flex flex-col justify-center bg-slate-50">  
+        <div id="tudo" className="flex flex-col justify-center bg-white">  
              <Router>
                 <Head />
                     <Routes>

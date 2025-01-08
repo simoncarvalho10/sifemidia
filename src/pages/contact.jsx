@@ -6,6 +6,11 @@ function Contact() {
     return(  
          
         <div id="contatospam" className="w-full md:rounded-lg mt-[80px] py-8 text-black">
+            <div className="px-6 mb-6">
+                <h4 className="text-[40px] font-ubuntu">
+                    Me conte um pouco mais a respeito do seu projeto!
+                </h4>
+            </div>
             <div className="px-6 flex flex-col gap-3">
                 <p className="w-full -mb-2">*Nome:</p>
                 <input id="nameContato" type="text" className="w-full h-8 bg-white border rounded-md border-gray-300" />
@@ -43,7 +48,7 @@ function Contact() {
                     </div>
                 </div>
                 <p className="w-full -mb-2">Observações:</p>
-                <input type="text" className="w-full h-[110px] border bg-white rounded-md border-gray-300"/>
+                <input type="text" className="w-full h-[180px] border bg-white rounded-md border-gray-300"/>
                 <button onClick={btnFormContato} id="enviarContato" className="h-8 bg-sky-700 mt-2 text-white">Enviar</button>
             </div>
         </div>
