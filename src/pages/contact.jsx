@@ -1,9 +1,7 @@
 import React from "react";
 import Contato from '../Script/contato.js'
-import Script from '../Script/script.js'
 
 function Contact() { 
-    const { isMenuOpen, btnOpenMenu, btnCloseMenu } = Script();
     const { btnFormContato } = Contato ();
     return(  
         <div id="tudo" className="flex flex-col justify-center bg-slate-50">  

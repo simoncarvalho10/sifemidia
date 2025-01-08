@@ -45,7 +45,7 @@ function home() {
     return(     
         <div>   
             <div id="spamContato" style={{display:'none'}} className="fixed justify-center items-center h-screen w-full bg-black/80 top-0 z-50 text-black">
-                <span id="contatospam" className="max-h-[90%] w-[90%] md:w-[60%] md:rounded-lg bg-white overflow-auto">
+                <span id="contatospam" className="h-[90%] w-[90%] md:w-[60%] md:rounded-lg bg-white overflow-auto">
                     <div className="w-full px-6 pt-6">
                         <button onClick={btnCloseContato} id="btnCloseContato" className="  top-0"><TfiClose size={25}/></button>
                     </div>
