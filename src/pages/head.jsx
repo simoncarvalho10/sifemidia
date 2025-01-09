@@ -39,7 +39,9 @@ function head() {
                                     <div className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">
                                         <Link to="/" onClick={btnCloseMenu} >Home</Link>
                                     </div>
-                                    <div className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Quem Somos</div>
+                                    <div className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">
+                                        <Link to="/about" onClick={btnCloseMenu} >Quem somos</Link> 
+                                    </div>
                                     <div className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">Portifólio</div>
                                     <div className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">
                                         <Link to="/contact" onClick={btnCloseMenu} >Fale conosco</Link>
