@@ -7,7 +7,6 @@ import Script from '../Script/script.js'
 
 function head() {
     const { isMenuOpen, btnOpenMenu, btnCloseMenu } = Script();
-    console.log("isMenuOpen 1 = "+isMenuOpen)
     return(          
                 <div>
                     <div id="head" className="shadow-lg px-8 md:px-12 py-4 h-[80px] bg-sky-900 w-full flex justify-between fixed z-10 top-0">
@@ -36,17 +35,10 @@ function head() {
                         <div id="spanMenu" className='w-full h-screen fixed z-10'>
                             <span className='bg-sky-900 w-[70%] h-[100%] mt-[80px] pr-8 text-right fixed right-0'>
                                 <div id="menu" className="flex flex-col text-white w-full h-[200px] gap-2">
-                                    <div className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">
-                                        <Link to="/" onClick={btnCloseMenu} >Home</Link>
-                                    </div>
-                                    <div className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">
-                                        <Link to="/about" onClick={btnCloseMenu} >Quem somos</Link> 
-                                    </div>
-                                    <div className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">Portifólio</div>
-                                    <div className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">
-                                        <Link to="/contact" onClick={btnCloseMenu} >Fale conosco</Link>
-                                    </div>
-                                       
+                                    <Link to="/" onClick={btnCloseMenu} className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Home</Link>
+                                    <Link to="/about" onClick={btnCloseMenu} className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Quem somos</Link> 
+                                    <Link to="/faq" onClick={btnCloseMenu} className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Perguntas frequentes</Link> 
+                                    <Link to="/contact" onClick={btnCloseMenu} className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">Fale conosco</Link>
                                 </div>
                             </span>
                         </div>
