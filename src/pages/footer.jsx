@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import { SlArrowRight, SlArrowDown } from "react-icons/sl";
 import { HiOutlineMail } from "react-icons/hi";
 import { RiFacebookFill } from "react-icons/ri";
 import { ImLinkedin2 } from "react-icons/im"; 
@@ -6,6 +8,14 @@ import { RiWhatsappLine } from "react-icons/ri";
 import SifeLogoPb from '../assets/logo_sife_bk.svg'
 
 function footer() {
+        const [menus, setMenus] = useState({});
+    
+        const toggleSubmenu = (submenuId) => {
+            setMenus((prev) => ({
+                ...prev,
+                [submenuId]: !prev[submenuId],
+            }));
+        };
     return(           
             <div class="bg-grdFooter text-black py-6">
                 <div class="h-full m-8 md:mx-12 flex flex-col md:flex-row md:justify-between items-center justify-center md:gap-24 gap-3">
@@ -20,20 +30,24 @@ function footer() {
                         <img class="h-[60px]" src={SifeLogoPb} alt="logo" />
                         <p class=" text-justify">A SIFE Mídia é uma empresa de criação de sites profissionais que projeta, desenvolve e gerencia sites de alto impacto que geram leads, vendem produtos e contam histórias.</p>
                     </div>
-                    <div class="flex-col gap-4 md:w-[30%]">
-                        <h4 class="font-bold text-[22px]">Acesse nossas redes:</h4>
-                        <div class="flex justify-center w-full gap-3">
-                            <RiFacebookFill size={40}/>
-                            <ImLinkedin2 size={40}/>
-                            <GrInstagram size={40}/>
-                            <RiWhatsappLine size={40}/>
+                    <div className="flex flex-col rounded-t-lg items-center fixed bottom-0 py-3 text-gray-300 justify-center gap-2 w-[60%] bg-grdMenus">
+                        <div onClick={() => toggleSubmenu("submenu2")} class="flex-col gap-4 md:w-[30%]">
+                            <h4 class="flex items-center gap-2 font-bold text-[15px] font-ubuntu">
+                                {!menus["submenu2"] ? <SlArrowRight size={12} /> : <SlArrowDown size={12} />}
+                                Acesse nossas redes:
+                            </h4>
                         </div>
-                        <div class="w-full flex justify-center gap-2">
-                            <HiOutlineMail size={30}/>
-                            <p>sifemidia@outlook.com</p>
+                        <div style={{ display: menus["submenu2"] ? "block" : "none" }}>
+                            <div className="flex items-center justify-center gap-4">
+                                <RiFacebookFill size={32}/>
+                                <ImLinkedin2 size={32}/>
+                                <GrInstagram size={32}/>
+                                <RiWhatsappLine size={32}/>
+                            </div>
                         </div>
+                        
                     </div>
-                </div>
+                </div >
             </div>
     );
 }

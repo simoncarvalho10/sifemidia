@@ -23,7 +23,7 @@ function faq() {
                 <li className="w-full flex flex-col bg-white border border-gray-400 hover:bg-gray-200">
                     <button
                     onClick={() => toggleSubmenu("submenu1")}
-                    className="flex items-center justify-center h-[40px] gap-2"
+                    className="flex items-center justify-center h-[40px] gap-2 px-2"
                     >
                         {!menus["submenu1"] ? <SlArrowRight size={12} /> : <SlArrowDown size={12} />}
                         O que é responsividade
@@ -37,7 +37,7 @@ function faq() {
                 <li className="w-full flex flex-col bg-white border border-gray-400 hover:bg-gray-200">
                     <button
                     onClick={() => toggleSubmenu("submenu2")} // Corrigido para React
-                    className="flex items-center justify-center h-[40px] gap-2"
+                    className="flex items-center justify-center h-[40px] gap-2 px-2"
                     >
                         {!menus["submenu2"] ? <SlArrowRight size={12} /> : <SlArrowDown size={12} />}
                         Vocês oferecem suporte após o lançamento?
@@ -51,7 +51,7 @@ function faq() {
                 <li className="w-full flex flex-col bg-white border border-gray-400 hover:bg-gray-200">
                     <button
                     onClick={() => toggleSubmenu("submenu3")} // Corrigido para React
-                    className="flex items-center justify-center h-[40px] gap-2"
+                    className="flex items-center justify-center h-[40px] gap-2 px-2"
                     >
                         {!menus["submenu3"] ? <SlArrowRight size={12} /> : <SlArrowDown size={12} />}
                         Quanto tempo leva para desenvolver um site?
