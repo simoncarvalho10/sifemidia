@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { SlArrowRight, SlArrowDown } from "react-icons/sl";
 
 function faq() {
-    const [menus, setMenus] = useState({}); // Armazena o estado de cada submenu
+    const [menus, setMenus] = useState({});
 
     const toggleSubmenu = (submenuId) => {
         setMenus((prev) => ({
             ...prev,
-            [submenuId]: !prev[submenuId], // Alterna o estado do submenu específico
+            [submenuId]: !prev[submenuId],
         }));
     };
 

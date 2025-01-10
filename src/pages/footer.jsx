@@ -7,7 +7,7 @@ import SifeLogoPb from '../assets/logo_sife_bk.svg'
 
 function footer() {
     return(           
-            <div class="bg-gray-300 text-black py-6">
+            <div class="bg-grdFooter text-black py-6">
                 <div class="h-full m-8 md:mx-12 flex flex-col md:flex-row md:justify-between items-center justify-center md:gap-24 gap-3">
                     <div class="hidden md:flex flex-col md:w-[20%]">
                         <h4 class="md:w-full font-bold text-[22px] md:h-9">Menus:</h4>

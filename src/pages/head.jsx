@@ -9,7 +9,7 @@ function head() {
     const { isMenuOpen, btnOpenMenu, btnCloseMenu } = Script();
     return(          
                 <div>
-                    <div id="head" className="shadow-lg px-8 md:px-12 py-4 h-[80px] bg-sky-900 w-full flex justify-between fixed z-10 top-0">
+                    <div id="head" className="shadow-lg px-8 md:px-12 py-4 h-[80px] bg-grdMenus w-full flex justify-between fixed z-10 top-0">
                         <div className="w-[120px] " >
                             <img className="h-full" id="logotop" src={sifeLogo} alt="logo" />
                         </div>
@@ -22,13 +22,9 @@ function head() {
                             </div>
                         </div>
                         <div className='flex md:hidden'>
-                        
-                            {!isMenuOpen && (
-                                <button id="openMenu" onClick={btnOpenMenu} className="h-full flex items-center text-white hover:text-gray-300"><CiMenuFries size={33} /></button>
-                            )}
-                            {isMenuOpen && (
-                                <button id="closeMenu" onClick={btnCloseMenu} className="h-full flex items-center text-white hover:text-gray-300"><TfiClose size={33} /></button>
-                            )}
+                            <button id="openMenu" onClick={btnOpenMenu} className="h-full flex items-center text-white hover:text-gray-300">
+                                {!isMenuOpen ? <CiMenuFries size={33}  /> : <TfiClose size={33} />}
+                            </button>
                         </div>
                     </div>
                     {isMenuOpen && ( 

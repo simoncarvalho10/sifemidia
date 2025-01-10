@@ -175,7 +175,7 @@ function home() {
                     </span>
                 </button>
             </div>
-            <div class="bg-budget md:shadow-lg  w-full h-full flex flex-col justify-center px-8 md:px-12 text-white bg-teste bg-cover bg-center bg-green-400">
+            <div class="bg-grdBudget md:shadow-lg  w-full h-full flex flex-col justify-center px-8 md:px-12 text-white bg-teste bg-cover bg-center bg-green-400">
                 <div class="py-16 md:flex">
                     <div class="flex justify-center w-full h-[150px] md:h-[250px] overflow-hidden">
                         <img  src={imgPC} alt="logo" />

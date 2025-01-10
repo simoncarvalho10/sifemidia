@@ -12,6 +12,11 @@ module.exports = {
         'banner': "url('/src/assets/banner.jpg')",
         'pc': "url('/src/assets/pc.png')",
       },
+      backgroundImage: theme => ({
+        'grdBudget': 'linear-gradient(0deg, #2B263D, #AF64A9)',
+        'grdMenus': 'linear-gradient(45deg, #0A122A, #0B3861)',
+        'grdFooter': 'linear-gradient(45deg, #F2F2F2, #BDBDBD) ',
+      }),  
     },
   },
   plugins: [],
