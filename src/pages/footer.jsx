@@ -30,14 +30,18 @@ function footer() {
                         <img class="h-[60px]" src={SifeLogoPb} alt="logo" />
                         <p class=" text-justify">A SIFE Mídia é uma empresa de criação de sites profissionais que projeta, desenvolve e gerencia sites de alto impacto que geram leads, vendem produtos e contam histórias.</p>
                     </div>
+                    <div class="w-full flex justify-center gap-2">
+                        <HiOutlineMail size={30}/>
+                        <p>sifemidia@outlook.com</p>
+                    </div>
                     <div className="flex flex-col rounded-t-lg items-center fixed bottom-0 py-3 text-gray-300 justify-center gap-2 w-[60%] bg-grdMenus">
-                        <div onClick={() => toggleSubmenu("submenu2")} class="flex-col gap-4 md:w-[30%]">
-                            <h4 class="flex items-center gap-2 font-bold text-[15px] font-ubuntu">
-                                {!menus["submenu2"] ? <SlArrowRight size={12} /> : <SlArrowDown size={12} />}
+                        <div onClick={() => toggleSubmenu("ftmenu")} class="flex-col gap-4 md:w-[30%]">
+                            <h4 class="flex items-center gap-2 text-[15px] font-ubuntu">
+                                {!menus["ftmenu"] ? <SlArrowRight size={12} /> : <SlArrowDown size={12} />}
                                 Acesse nossas redes:
                             </h4>
                         </div>
-                        <div style={{ display: menus["submenu2"] ? "block" : "none" }}>
+                        <div style={{ display: menus["ftmenu"] ? "block" : "none" }}>
                             <div className="flex items-center justify-center gap-4">
                                 <RiFacebookFill size={32}/>
                                 <ImLinkedin2 size={32}/>

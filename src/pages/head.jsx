@@ -29,12 +29,12 @@ function head() {
                     </div>
                     {isMenuOpen && ( 
                         <div id="spanMenu" className='w-full h-screen fixed z-10'>
-                            <span className='bg-sky-900 w-[70%] h-[100%] mt-[80px] pr-8 text-right fixed right-0'>
-                                <div id="menu" className="flex flex-col text-white w-full h-[200px] gap-2">
-                                    <Link to="/" onClick={btnCloseMenu} className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Home</Link>
-                                    <Link to="/about" onClick={btnCloseMenu} className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Quem somos</Link> 
-                                    <Link to="/faq" onClick={btnCloseMenu} className="bg-sky-800 hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Perguntas frequentes</Link> 
-                                    <Link to="/contact" onClick={btnCloseMenu} className="bg-sky-800 hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">Fale conosco</Link>
+                            <span className='bg-grdMenus w-[70%] h-[100%] mt-[80px] pr-8 text-right fixed right-0'>
+                                <div id="menu" className="flex flex-col text-gray-200 w-full h-[200px] gap-2">
+                                    <Link to="/" onClick={btnCloseMenu} className="bg-grdSubMenus hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Home</Link>
+                                    <Link to="/about" onClick={btnCloseMenu} className="bg-grdSubMenus hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Quem somos</Link> 
+                                    <Link to="/faq" onClick={btnCloseMenu} className="bg-grdSubMenus hover:bg-sky-700 h-[50px] w-full flex items-center justify-end pr-4">Perguntas frequentes</Link> 
+                                    <Link to="/contact" onClick={btnCloseMenu} className="bg-grdSubMenus hover:bg-sky-700  h-[50px] w-full flex items-center justify-end pr-4">Fale conosco</Link>
                                 </div>
                             </span>
                         </div>
