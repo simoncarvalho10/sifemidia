@@ -50,7 +50,7 @@ function Contact() {
                     </div>
                 </div>
                 <p className="w-full -mb-1">Observações:</p>
-                <textarea placeholder='Digite aqui o motivo do contato...' className='p-3 w-full h-[180px] border rounded-sm border-gray-300 resize-none leading-tight'></textarea>
+                <textarea placeholder='Digite aqui o motivo do contato...' className='p-3 bg-white w-full h-[180px] border rounded-sm border-gray-300 resize-none leading-tight'></textarea>
                 <button onClick={btnFormContato} id="enviarContato" className="rounded-xl h-10 bg-sky-700 mt-2 text-white">Enviar</button>
             </div>
         </div>
