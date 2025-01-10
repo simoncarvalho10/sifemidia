@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";  
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import './styles/style.css';
 
 import Head from './pages/head'
@@ -9,10 +9,14 @@ import Footer from './pages/footer'
 import About from './pages/about'
 import Faq from './pages/faq'
 
+import ScrollToTop from "./Script/scrolltop";
+
 function App() {
+
     return( 
         <div id="tudo" className="flex flex-col justify-center bg-white">  
              <Router>
+                <ScrollToTop />
                 <Head />
                     <Routes>
                         <Route path="/" element={<Home />} />
