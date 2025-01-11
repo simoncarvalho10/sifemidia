@@ -1,3 +1,5 @@
+import FoneMask from './fonemask'
+
 function Contato() {
 
     let alertnameContato
@@ -50,20 +52,32 @@ function Contato() {
 }
 export default Contato;
 
-export function validateForm(elementGroup) {
+export function validateForm(elementGroup, valueInput) {
     console.log('elementGroup = '+elementGroup);
+    console.log('valueInput 1 = '+valueInput.value);
+    //console.log('valueInput = '+valueInput);
     const group = elementGroup
-
+    if (elementGroup=="group2"){
+        FoneMask(valueInput);
+    }
+    
     const groupElements = document.querySelectorAll(`[data-group="${group}"]`);
 
-    groupElements.forEach(element => {
-        console.log(`ID: ${element.id}, Tipo: ${element.tagName.toLowerCase()}`);
-        if (element.tagName.toLowerCase() === 'input') {
-            element.classList.remove("border-red-500");
-        }
-        if (element.tagName.toLowerCase() === 'span') {
-            element.style.display = "none";
-        }
-    })    
+    console.log('valueInput 2 = '+valueInput.value);
+
+    if (groupElements != "group2" && valueInput.value != ""){
+        
+        groupElements.forEach(element => {
+            
+                if (element.tagName.toLowerCase() === 'input') {
+                    element.classList.remove("border-red-500");
+                }
+                if (element.tagName.toLowerCase() === 'span') {
+                    element.style.display = "none";
+                }
+            
+        })
+
+    }   
 
 }	       

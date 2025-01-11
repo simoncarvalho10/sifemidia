@@ -1,6 +1,6 @@
 function foneMask(event) {
-    let input = event.target;
-    let value = input.value.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
+    let input = event
+    let value = input.value.replace(/\D/g, "");
 
     // Máscara para formato de telefone (xx) xxxx-xxxx
     if (value.length > 10) {

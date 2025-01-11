@@ -17,11 +17,14 @@ import Contato from '../Script/contato.js'
 import { validateForm } from '../Script/contato.js'
 import Galeria from '../Script/galeria.js'
 
+import Formcontato from './formcontact.jsx'
+
 function home() {
    
     const formChange = (event) => {
         const elementGroup = event.target.dataset.group;
-        validateForm(elementGroup);
+        const valueInput = event.target;
+        validateForm(elementGroup, valueInput);
     };    
     const { 
         btnCloseContato,    
@@ -45,50 +48,11 @@ function home() {
     return(     
         <div>   
             <div id="spamContato" style={{display:'none'}} className="fixed justify-center items-center h-screen w-full bg-black/80 top-0 z-50 text-black">
-                <span id="contatospam" className="h-[90%] w-[90%] md:w-[60%] md:rounded-lg bg-white overflow-auto">
+                <span id="contatospam" className="h-[90%] w-[90%] md:w-[60%] md:rounded-lg bg-white overflow-auto pb-6">
                     <div className="w-full px-6 pt-6">
                         <button onClick={btnCloseContato} id="btnCloseContato" className="  top-0"><TfiClose size={25}/></button>
                     </div>
-                    <div className="px-6 pb-6 pt-2 flex flex-col gap-3">
-                        <p className="w-full -mb-2">*Nome:</p>
-                        <input id="nameContato" data-group="group1" onChange={formChange} type="text" className="w-full h-8 bg-white border rounded-md border-gray-300" />
-                        <span id="alertnameContato" data-group="group1" className='hidden text-red-500 -mt-2'>Por favor, digite o seu nome!</span>
-                        <p className="w-full -mb-2">*Telefone:</p>
-                        <input id="foneContato" data-group="group2" onChange={formChange} type="text" className="w-full h-8 border bg-white rounded-md border-gray-300"/>
-                        <span id="alertfoneContato" data-group="group2" className='hidden text-red-500 -mt-2'>Por favor, digite o seu telefone!</span>
-                        <p className="w-full -mb-2">Tipo de site:</p>
-                        <select name="" id="" className="w-full h-8 border bg-white rounded-md border-gray-300">
-                            <option value="">Novo Site</option>
-                            <option value="">Atulização de site</option>
-                        </select>
-                        <div className="flex gap-3">
-                            <div className="grow">
-                                <p className="w-full">Já possuo um domínio:</p>
-                                <select name="" id="" className="w-full h-8 border bg-white rounded-md border-gray-300">
-                                    <option value="0">Sim</option>
-                                    <option value="1">Não</option>
-                                </select>
-                            </div>
-                            <div className="w-[40%]">
-                                <p className="w-full">Qtde. de páginas:</p>
-                                <select name="" id="" className="w-full h-8 border bg-white rounded-md border-gray-300">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
-                                    <option value="">6</option>
-                                    <option value="">7</option>
-                                    <option value="">8</option>
-                                    <option value="">9</option>
-                                    <option value="">10</option>
-                                </select>
-                            </div>
-                        </div>
-                        <p className="w-full -mb-2">Observações:</p>
-                        <input type="text" className="w-full h-[95px] border bg-white rounded-md border-gray-300"/>
-                        <button onClick={btnFormContato} id="enviarContato" className="h-8 bg-sky-700 mt-2 text-white">Enviar</button>
-                    </div>
+                    <Formcontato/> 
                 </span>
             </div>
             <div id="default-carousel" class="md:hidden relative w-full" data-carousel="slide">
