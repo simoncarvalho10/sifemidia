@@ -7,6 +7,10 @@ function Contato() {
     let nameContato
     let foneContato
     let spamContato
+    let tpSite
+    let pDominio
+    let qtdPage
+    let txtObserv
 
     function declarVar(){
         alertnameContato = document.getElementById("alertnameContato");
@@ -14,6 +18,10 @@ function Contato() {
         nameContato = document.getElementById("nameContato");
         foneContato = document.getElementById("foneContato");
         spamContato = document.getElementById("spamContato");
+        tpSite = document.getElementById("tpSite");
+        pDominio = document.getElementById("pDominio");
+        qtdPage = document.getElementById("qtdPage");
+        txtObserv = document.getElementById("txtObserv");
     }
     
     const btnCloseContato = () => {
@@ -36,12 +44,35 @@ function Contato() {
             alertfoneContato.style.display = "flex";
             foneContato.classList.add("border-red-500");
         }
+
+        if (nameContato.value != "" && foneContato.value != "") {
+            // Passa todas as opções do select para uma variável
+            const cIdxTpSite = tpSite.selectedIndex;
+            const cIdxDominio = pDominio.selectedIndex;
+            const cIdxQtdPage = qtdPage.selectedIndex;
+            
+            const cOptsTpSite = tpSite.options[cIdxTpSite].text;
+            const cOptsDominio = pDominio.options[cIdxDominio].text;
+            const cOptsQtdPage = qtdPage.options[cIdxQtdPage].text;
+
+            let vMsg = `*ORÇAMENTO DE SITE*%0A%0A`
+            vMsg = `${vMsg}*Nome:* ${nameContato.value}%0A`
+            vMsg = `${vMsg}*Telefone:* ${foneContato.value}%0A%0A`
+            vMsg = `${vMsg}*Tipo de site:* ${cOptsTpSite}%0A`
+            vMsg = `${vMsg}*Possui Domínio:* ${cOptsDominio}%0A`
+            vMsg = `${vMsg}*Qtd. de Páginas:* ${cOptsQtdPage}%0A%0A`
+            vMsg = `${vMsg}*Observações:* ${txtObserv.value}`
+            
+            const vPhone = +5562984917598
+            window.open(`https://wa.me/${vPhone}?text=${vMsg}`,"_blank") 
+            location.reload();        
+            
+        }
     }
     document.addEventListener("click", function(event){
         if(event.target === spamContato) {
             declarVar();
             spamContato.style.display ="none";
-            console.log("acessou o botão Close")
         } 
     }) 
     return {
@@ -53,17 +84,13 @@ function Contato() {
 export default Contato;
 
 export function validateForm(elementGroup, valueInput) {
-    console.log('elementGroup = '+elementGroup);
-    console.log('valueInput 1 = '+valueInput.value);
-    //console.log('valueInput = '+valueInput);
+
     const group = elementGroup
     if (elementGroup=="group2"){
         FoneMask(valueInput);
     }
     
     const groupElements = document.querySelectorAll(`[data-group="${group}"]`);
-
-    console.log('valueInput 2 = '+valueInput.value);
 
     if (groupElements != "group2" && valueInput.value != ""){
         

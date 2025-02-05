@@ -6,18 +6,15 @@ function Script() {
 
     const btnOpenMenu = () => {
         setIsMenuOpen(true);
-        console.log("acessou o botão Open")
     }; 
     const btnCloseMenu = () => {
         setIsMenuOpen(false);
-        console.log("acessou o botão Close")
     };
 
     //const spanMenu = document.getElementById("spanMenu");
     document.addEventListener("click", function(event){
         if(event.target === spanMenu) {
             setIsMenuOpen(false);
-            console.log("acessou o botão Close")
         } 
     })     
 

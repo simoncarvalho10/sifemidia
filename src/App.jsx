@@ -8,6 +8,7 @@ import Contact from "./pages/contact";
 import Footer from './pages/footer'
 import About from './pages/about'
 import Faq from './pages/faq'
+import Chat from './pages/chat'
 
 import ScrollToTop from "./Script/scrolltop";
 
@@ -24,6 +25,7 @@ function App() {
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/faq" element={<Faq />} />
                     </Routes>
+                {/*Chat />*/}
                 <Footer />
             </Router>
         </div>

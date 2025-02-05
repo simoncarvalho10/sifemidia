@@ -17,26 +17,19 @@ function footer() {
             }));
         };
     return(           
-            <div class="bg-grdFooter text-black py-6">
-                <div class="h-full m-8 md:mx-12 flex flex-col md:flex-row md:justify-between items-center justify-center md:gap-24 gap-3">
-                    <div class="hidden md:flex flex-col md:w-[20%]">
-                        <h4 class="md:w-full font-bold text-[22px] md:h-9">Menus:</h4>
-                        <p className='md:w-full md:h-7 md:hover:bg-gray-200'>Home</p>
-                        <p className='md:w-full md:h-7 md:hover:bg-gray-200'>Quem Somos</p>
-                        <p className='md:w-full md:h-7 md:hover:bg-gray-200'>Portifólio</p>
-                        <p className='md:w-full md:h-7 md:hover:bg-gray-200'>Fale Conosco</p>
-                    </div>
+            <div className="bg-grdFooter text-black py-6 md:text-[20px]">
+                <div className="h-full m-8 md:mx-12 flex flex-col  md:justify-between items-center justify-center gap-3">
                     <div className='flex flex-col justify-center gap-4'>
-                        <img class="h-[60px]" src={SifeLogoPb} alt="logo" />
-                        <p class=" text-justify">A SIFE Mídia é uma empresa de criação de sites profissionais que projeta, desenvolve e gerencia sites de alto impacto que geram leads, vendem produtos e contam histórias.</p>
+                        <img className="h-[60px]" src={SifeLogoPb} alt="logo" />
+                        <p className=" text-justify md:px-60">A SIFE Mídia é uma empresa de criação de sites profissionais que projeta, desenvolve e gerencia sites de alto impacto que geram leads, vendem produtos e contam histórias.</p>
                     </div>
-                    <div class="w-full flex justify-center gap-2">
+                    <div className="w-full flex justify-center gap-2">
                         <HiOutlineMail size={30}/>
                         <p>sifemidia@outlook.com</p>
                     </div>
                     <div className="flex flex-col rounded-t-lg items-center fixed bottom-0 py-3 text-gray-300 justify-center gap-2 w-[60%] bg-grdMenus">
-                        <div onClick={() => toggleSubmenu("ftmenu")} class="flex-col gap-4 md:w-[30%]">
-                            <h4 class="flex items-center gap-2 text-[15px] font-ubuntu">
+                        <div onClick={() => toggleSubmenu("ftmenu")} className="flex-col gap-4 md:w-[30%]">
+                            <h4 className="flex items-center justify-center gap-2 text-[15px] md:text-[20px] font-ubuntu">
                                 {!menus["ftmenu"] ? <SlArrowRight size={12} /> : <SlArrowDown size={12} />}
                                 Acesse nossas redes:
                             </h4>
@@ -48,11 +41,11 @@ function footer() {
                                 <GrInstagram size={32}/>
                                 <RiWhatsappLine size={32}/>
                             </div>
-                        </div>
-                        
+                        </div>  
                     </div>
                 </div >
             </div>
+
     );
 }
 export default footer

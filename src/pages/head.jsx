@@ -14,11 +14,11 @@ function head() {
                             <img className="h-full" id="logotop" src={sifeLogo} alt="logo" />
                         </div>
                         <div className="hidden md:flex gap-1">
-                            <div id="menu" className="flex gap-0.5 text-white h-full py-1">
-                                <div className="menu w-[110px] flex items-center justify-center hover:border-b-2 hover:border-white" id="btnHome">Home</div>
-                                <div className="menu w-[110px] flex items-center justify-center  hover:border-b-2 hover:border-white" id="quem_somos">Quem Somos</div>
-                                <div className="menu w-[110px] flex items-center justify-center  hover:border-b-2 hover:border-white" id="portifolio">Portifólio</div>
-                                <div className="menu w-[110px] flex items-center justify-center  hover:border-b-2 hover:border-white" id="fale_conosco">Fale Conosco</div>
+                            <div id="menu" className="flex gap-6 text-white h-full py-1">
+                                <Link to="/" className="menu flex items-center justify-center hover:border-b-[1px] hover:border-white" id="btnHome">Home</Link>
+                                <Link to="/about" className="menu flex items-center justify-center  hover:border-b-[1px] hover:border-white" id="quem_somos">Quem somos</Link>
+                                <Link to="/faq" className="menu flex items-center justify-center  hover:border-b-[1px] hover:border-white" id="portifolio">Perguntas frequentes</Link>
+                                <Link to="/contact" className="menu flex items-center justify-center  hover:border-b-[1px] hover:border-white" id="fale_conosco">Fale conosco</Link>
                             </div>
                         </div>
                         <div className='flex md:hidden'>
